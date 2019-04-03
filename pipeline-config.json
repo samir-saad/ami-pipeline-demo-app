@@ -1,0 +1,24 @@
+{
+  "externalConfig": {
+    "branch": "develop"
+  },
+  "ciConfig": {
+    "codeTestStage": {
+      "enable": false
+    },
+    "codeSecurityStage": {
+      "enable": false
+    },
+    "codeQualityStage": {
+      "enable": false
+    }
+  },
+  "cdConfig": {
+    "ocpTestDeployment": {
+      "type": "blue-green"
+    },
+    "ocpProdDeployment": {
+      "type": "blue-green"
+    }
+  }
+}

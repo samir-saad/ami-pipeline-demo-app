@@ -1,0 +1,20 @@
+# ---> IDE
+.classpath
+.project
+.settings/
+.idea/
+bin/
+tmp/
+*log
+*idea
+*.iml
+
+# ---> Java
+*.class
+target/
+out/
+
+# ---> ackage Files
+*.jar
+*.war
+*.ear
