@@ -4,21 +4,39 @@
   },
   "ciConfig": {
     "codeTestStage": {
-      "enable": false
+      "enable": true
     },
     "codeSecurityStage": {
-      "enable": false
+      "enable": true
     },
     "codeQualityStage": {
-      "enable": false
+      "enable": true
     }
   },
   "cdConfig": {
+    "ocpDevDeployment": {
+      "type": "recreate",
+	  "project": "dev-monolith-8841",
+      "replicas": 1,
+      "autoScaling": {
+        "enable": false
+      }
+    },
     "ocpTestDeployment": {
-      "type": "blue-green"
+      "type": "blue-green",
+	  "project": "stage-monolith-8841",
+      "replicas": 2,
+      "autoScaling": {
+        "enable": true
+      }
     },
     "ocpProdDeployment": {
-      "type": "blue-green"
+	  "enable": false,
+      "type": "blue-green",
+      "replicas": 1,
+      "autoScaling": {
+        "enable": false
+      }
     }
   }
 }
