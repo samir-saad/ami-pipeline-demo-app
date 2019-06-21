@@ -16,7 +16,7 @@
   "cdConfig": {
     "ocpDevDeployment": {
       "type": "recreate",
-	  "project": "dev-monolith-8841",
+	  "project": "dev-ssaad",
       "replicas": 1,
       "autoScaling": {
         "enable": false
@@ -24,7 +24,7 @@
     },
     "ocpTestDeployment": {
       "type": "blue-green",
-	  "project": "stage-monolith-8841",
+	  "project": "test-ssaad",
       "replicas": 2,
       "autoScaling": {
         "enable": true
