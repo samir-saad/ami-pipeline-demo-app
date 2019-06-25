@@ -2,17 +2,6 @@
   "externalConfig": {
     "branch": "develop"
   },
-  "ciConfig": {
-    "codeTestStage": {
-      "enable": true
-    },
-    "codeSecurityStage": {
-      "enable": true
-    },
-    "codeQualityStage": {
-      "enable": true
-    }
-  },
   "cdConfig": {
     "ocpDevDeployment": {
       "type": "recreate",
@@ -25,18 +14,13 @@
     "ocpTestDeployment": {
       "type": "blue-green",
 	  "project": "test-ssaad",
-      "replicas": 2,
-      "autoScaling": {
-        "enable": true
-      }
+      "replicas": 2
     },
     "ocpProdDeployment": {
 	  "enable": false,
       "type": "blue-green",
-      "replicas": 1,
-      "autoScaling": {
-        "enable": false
-      }
+      "project": "prod-ssaad",
+      "replicas": 2
     }
   }
 }
