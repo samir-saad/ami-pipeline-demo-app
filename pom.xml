@@ -8,6 +8,7 @@
 	<artifactId>pipeline-demo-app</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>Pipeline demo app</name>
+	<description>Pipeline demo app with cpu load service</description>
 
 	<parent>
 		<groupId>org.ssaad.ami</groupId>
