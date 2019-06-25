@@ -4,9 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.ssaad.ami.demo.dto.Greeting;
-
-import java.util.concurrent.atomic.AtomicLong;
 
 
 @RestController
@@ -62,7 +59,7 @@ public class CpuLoadController {
 						Thread.sleep((long) Math.floor((1 - load) * 100));
 					}
 				}
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				logger.error("Error happened", e);
 			}
 		}
