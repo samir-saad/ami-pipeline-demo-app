@@ -1,21 +1,8 @@
 {
   "stages": [
     {
-      "taskType": "CODE_BUILD",
-      "confirmation": {
-        "time": 10,
-        "enable": true
-      },
-      "activation": {
-        "allowedBranches": [
-          "ANY",
-          "FEATURE"
-        ],
-        "allowedAppType": [
-          "ANY",
-          "LIBRARY"
-        ]
-      }
+      "taskType": "UNIT_TESTS",
+      "enable": false
     }
   ]
 }
