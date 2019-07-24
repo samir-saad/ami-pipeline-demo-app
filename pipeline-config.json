@@ -1,26 +1,21 @@
 {
-  "externalConfig": {
-    "branch": "develop"
-  },
-  "cdConfig": {
-    "ocpDevDeployment": {
-      "type": "recreate",
-	  "project": "dev-ssaad",
-      "replicas": 1,
-      "autoScaling": {
-        "enable": false
+  "stages": [
+    {
+      "taskType": "CODE_BUILD",
+      "confirmation": {
+        "time": 10,
+        "enable": true
+      },
+      "activation": {
+        "allowedBranches": [
+          "ANY",
+          "FEATURE"
+        ],
+        "allowedAppType": [
+          "ANY",
+          "LIBRARY"
+        ]
       }
-    },
-    "ocpTestDeployment": {
-      "type": "blue-green",
-	  "project": "test-ssaad",
-      "replicas": 2
-    },
-    "ocpProdDeployment": {
-	  "enable": false,
-      "type": "blue-green",
-      "project": "prod-ssaad",
-      "replicas": 2
     }
-  }
+  ]
 }

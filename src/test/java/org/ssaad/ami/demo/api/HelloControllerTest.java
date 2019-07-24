@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.ssaad.ami.demo.conf.Application;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {Application.class})
+@SpringBootTest(classes = {Application.class}, properties = "spring.cloud.config.enabled=false")
 @AutoConfigureMockMvc
 public class HelloControllerTest {
 
