@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Template
+labels:
+  template: s2i-build
+metadata:
+  annotations:
+    description: Source to image build
+  name: s2i-build
+objects:
+
+# Input stream tag
+- apiVersion: image.openshift.io/v1        
+  kind: ImageStreamTag
+  metadata:
+    name: "${INPUT_STREAM_NAME}:${INPUT_STREAM_TAG}"
+  lookupPolicy:
+    local: false
+  tag:
+    from:
+      kind: DockerImage
+      name: ${INPUT_STREAM_IMAGE}
+    name: ${INPUT_STREAM_TAG}
+
+# Output stream
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    labels:
+      app: ${APP_NAME}
+    name: ${APP_NAME}
+  spec:
+    lookupPolicy:
+      local: false
+
+# Build config  
+- apiVersion: build.openshift.io/v1
+  kind: BuildConfig
+  metadata:
+    labels:
+      app: ${APP_NAME}
+    name: ${BUILD_NAME}
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: "${APP_NAME}:${APP_VERSION}"
+    runPolicy: Serial
+    source:
+      binary: {}
+      type: Binary
+    strategy:
+      sourceStrategy:
+        from:
+          kind: ImageStreamTag
+          name: "${INPUT_STREAM_NAME}:${INPUT_STREAM_TAG}"
+      type: Source
+
+# Params
+parameters:
+- name: APP_NAME
+  displayName: Application Name
+  required: true
+- name: APP_VERSION
+  displayName: Application version
+  required: true
+- name: BUILD_NAME
+  displayName: Build Name
+  required: true
+- name: INPUT_STREAM_NAME
+  displayName: Input Image stream name
+  required: true
+- name: INPUT_STREAM_TAG
+  displayName: Input Image stream tag
+  required: true
+- name: INPUT_STREAM_IMAGE
+  displayName: Input Image stream image
+  required: true  
+  
