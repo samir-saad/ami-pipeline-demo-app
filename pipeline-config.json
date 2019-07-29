@@ -1,4 +1,7 @@
 {
+  "primaryConfigRepo": {
+    "branch": "develop"
+  },
   "stages": [
     {
       "taskType": "UNIT_TESTS",
