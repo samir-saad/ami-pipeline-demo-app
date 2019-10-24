@@ -4,8 +4,25 @@
   },
   "stages": [
     {
-      "taskType": "UNIT_TESTS",
-      "enable": false
+      "taskType": "CONTAINER_BUILD",
+      "platform": {
+        "clusterId": "ocp-dev",
+        "project": "pipeline-demo-dev"
+      }
+    },
+    {
+      "taskType": "DEPLOY_DEV",
+      "platform": {
+        "clusterId": "ocp-dev",
+        "project": "pipeline-demo-dev"
+      }
+    },
+    {
+      "taskType": "DEPLOY_TEST",
+      "platform": {
+        "clusterId": "ocp-dev",
+        "project": "pipeline-demo-test"
+      }
     }
   ]
 }

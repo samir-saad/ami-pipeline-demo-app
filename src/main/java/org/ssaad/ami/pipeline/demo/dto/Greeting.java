@@ -1,4 +1,4 @@
-package org.ssaad.ami.demo.dto;
+package org.ssaad.ami.pipeline.demo.dto;
 
 public class Greeting {
 
