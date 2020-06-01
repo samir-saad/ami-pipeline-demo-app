@@ -23,6 +23,9 @@
       "platform": {
         "clusterId": "ocp-dev",
         "project": "pipeline-demo-dev"
+      },
+      "testing": {
+        "enable": false
       }
     },
     {
