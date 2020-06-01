@@ -4,7 +4,6 @@
   },
   "stages": [
     {
-    },
       "taskType": "CONTAINER_BUILD",
       "platform": {
         "clusterId": "ocp-dev",
